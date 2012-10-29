@@ -1,0 +1,10 @@
+{
+  "parts": [
+    {
+      "name": "ep_html_export_using_client_filters",
+      "hooks": {
+        "getLineHTMLForExport": "ep_html_export_using_client_filters/ep_html_export_using_client_filters:getLineHTMLForExport"
+      }
+    }
+  ]
+}

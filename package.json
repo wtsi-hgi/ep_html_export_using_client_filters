@@ -1,0 +1,21 @@
+{
+  "name": "ep_html_export_using_client_filters",
+  "description": "Exports HTML using client-side routines, including the ability to use client-side filters in the export routine so you only have to write them once (e.g. if you have a client-side filter that hooks into aceGetFilterStack or aceCreateDomLine, you can add those hooks to the server-side as well by adding to ep.json)",
+  "homepage": "https://github.com/wtsi-hgi/ep_html_export_using_client_filters",
+  "version": "0.0.2",
+  "dependencies": {
+  },
+  "engines": {
+    "node": "*"
+  },
+  "main": "ep_html_export_using_client_filters.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wtsi-hgi/ep_html_export_using_client_filters.git"
+  },
+  "author": "Joshua C. Randall <jcrandall@alum.mit.edu>",
+  "license": "GPLv3"
+}
