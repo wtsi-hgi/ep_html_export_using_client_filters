@@ -22,15 +22,17 @@ var domline = require('ep_etherpad-lite/static/js/domline').domline;
 var linestylefilter = require('ep_etherpad-lite/static/js/linestylefilter').linestylefilter;
 
 exports.getLineHTMLForExport = function(hook_name, context, cb) {
-  console.debug("ep_html_export_using_client_filters.getLineHTMLForExport");
+  if (context.lineContent[0] === '*') {
+    context.lineContent = context.lineContent.substring(1);
+  }
+
   var emptyLine = (context.text == '\n');
   var domInfo = domline.createDomLine(!emptyLine, true);
   linestylefilter.populateDomLine(context.text, context.attribLine, context.apool, domInfo);
   domInfo.prepareForAdd();
   var lineContent = domInfo.node.innerHTML;
 
-  console.debug("ep_html_export_using_client_filters.getLineHTMLForExport: returning lineContent = %s", lineContent);
-
-  return cb(lineContent+'<br/>');
+  context.lineContent = lineContent + '<br>';
+  return true;
 }
 
